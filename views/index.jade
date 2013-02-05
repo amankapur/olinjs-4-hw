@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	div(id="container")
+		div(id='box')
+			if (title !== 'wtf')
+				h1 Welcome #{title}
+				h2 Compose a new Twit
+				input(name='twit', id='twit-box', type='text', placeholder='Enter twit...')
+				button(id='newtwit') Send twit
+			else
+				button(id="loginbutton") Login
+
+		div(id='twitlist')
+			include _twits
+		
+		div(class="error message")
+			h3 LESS THAN 140 Characters please
+			p click me to remove message 
+
+

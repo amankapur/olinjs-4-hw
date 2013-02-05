@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	center
+		div(id="big-box")
+			h1 Welcome #{title}
+				form(method='post', action='/users/new', id='newuserform')
+					span
+						input(name='username', id='username', type='text', placeholder='Enter Username...')
+						button(type='submit') Submit
